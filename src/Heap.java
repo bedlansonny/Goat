@@ -11,19 +11,17 @@ public class Heap
         nextInd = 0;
     }
 
-    public int killGoat()
+    public boolean killGoat()
     {
         if(arr[0].output() == arr[1].output() || arr[0].output() == arr[2].output())
-            return -1;
-
-
-        int output = arr[0].output();
+            return false;
 
         size--;
         swap(0, nextInd-1);
         nextInd--;
 
         //sorting probably isn't necessary, bc nextDay() happens after killGoat() anyway
+        /*
         int currentInd = 0;
         while(arr[currentInd].output() > arr[2*currentInd+1].output() ||
                 arr[currentInd].output() > arr[2*currentInd+2].output())
@@ -34,8 +32,9 @@ public class Heap
             swap(currentInd, smallInd);
             currentInd = smallInd;
         }
+        */
 
-        return output;
+        return true;
     }
 
     public void nextDay()
