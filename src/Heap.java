@@ -22,8 +22,9 @@ public class Heap
         size--;
         swap(0, nextInd-1);
         nextInd--;
-        int currentInd = 0;
 
+        //sorting probably isn't necessary, bc nextDay() happens after killGoat() anyway
+        int currentInd = 0;
         while(arr[currentInd].output() > arr[2*currentInd+1].output() ||
                 arr[currentInd].output() > arr[2*currentInd+2].output())
         {
