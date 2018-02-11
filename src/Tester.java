@@ -22,9 +22,20 @@ public class Tester
                 goatHeap.add(new Goat(cycle));
             }
 
-            System.out.println(goatHeap);
+            int totalDays = 0;
+            int lifeDays = 0;
+            do
+            {
+                if(goatHeap.killGoat())
+                    lifeDays = 0;
+                else
+                    lifeDays++;
+                totalDays++;
+                goatHeap.nextDay();
+            } while(lifeDays < goatHeap.fullCycle());
+            totalDays -= goatHeap.fullCycle();
 
-
+            System.out.printf("%d %d%n", goatHeap.size, totalDays);
         }
     }
 }
